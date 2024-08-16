@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Create Student</title>
+    <meta charset="utf-8">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body>
+
+
+{% csrf_token %}
+<div class="container mt-3 col-5">
+    <div class="card">
+        <div class="card-header"><h2>Student form</h2></div>
+        <div class="card-body">
+            <form method="post">
+                <div class="mb-3 mt-3">
+                    <label>Name</label>
+                    {{form.name}}
+                </div>
+                <div class="mb-3">
+                    <label>Age</label>
+                    {{form.age}}
+                </div>
+                <div class="mb-3">
+                    <label>Address</label>
+                    {{form.address}}
+                </div>
+                <div class="mb-3">
+                    <label>Faculty</label>
+                     {{form.address}}
+                </div>
+                <button type="submit" class="btn btn-success">Create</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

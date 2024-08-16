@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>Student</title>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student List</h2>
+    <a href="/create/" class="btn btn-primary mb-2 float-right">Create Student</a>
+    <table class="table table-bordered table-hover">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Faculty</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for st in students %}
+        <tr>
+            <td>{{st.id}}</td>
+            <td>{{st.name}}</td>
+            <td>{{st.age}}</td>
+            <td>{{st.address}}</td>
+            <td>{{st.faculty}}</td>
+            <td>
+                <a class="btn btn-danger" href='/delete/{{st.id}}'>Delete</a>
+                <a class="btn btn-primary" href='/update/{{st.id}}'><i class="fa fa-edit"></i>Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
