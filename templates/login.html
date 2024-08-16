@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <title>Login</title>
+</head>
+<body>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="container mt-3 col-5">
+        <div class="card">
+            <div class="card-header"><h2>Login</h2></div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <label>Name</label>
+                    Username: <input type="text" name="username" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label>Name</label>
+                    Password: <input type="password" name="username" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-success">Login</button>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
